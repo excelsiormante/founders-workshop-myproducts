@@ -1,0 +1,62 @@
+{
+  "name": "serpico-myproducts",
+  "version": "1.0.0",
+  "description": "serpico products API",
+  "engines": {
+    "node": ">= 12"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_PATH=. NODE_ENV=development nodemon",
+    "test": "npm run test:all",
+    "test:all": "npm run test:unit && npm run test:features",
+    "test:unit": "cross-env NODE_PATH=. NODE_ENV=test mocha --opts test/mocha.opts.unit",
+    "test:features": "cross-env NODE_PATH=. NODE_ENV=test mocha --opts test/mocha.opts.features",
+    "coverage": "cross-env NODE_PATH=. NODE_ENV=test nyc mocha --opts test/mocha.opts.unit",
+    "lint": "eslint {src,config,test}/**/*.js",
+    "db:migrate:dev": "cross-env NODE_PATH=. npx sequelize-cli db:migrate",
+    "db:migrate:test": "cross-env NODE_PATH=. NODE_ENV=test npx sequelize-cli db:migrate"
+  },
+  "repository": {},
+  "author": "Josh Mante <excelsior.mante@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "awilix": "^4.2.5",
+    "awilix-express": "^3.0.0",
+    "body-parser": "^1.19.0",
+    "chance": "^1.1.4",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "del": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.15.2",
+    "express-status-monitor": "^1.3.2",
+    "http-status": "^1.4.2",
+    "inflection": "^1.12.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "pg": "^7.18.2",
+    "sequelize": "^5.21.5",
+    "structure": "^1.8.0",
+    "swagger-ui-express": "^4.1.3",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-change": "^2.1.2",
+    "dirty-chai": "^2.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-import-resolver-node": "^0.3.3",
+    "eslint-plugin-chai-friendly": "^0.5.0",
+    "eslint-plugin-import": "^2.20.1",
+    "factory-girl": "^4.0.0",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0",
+    "sequelize-cli": "^5.5.1",
+    "supertest": "^4.0.2"
+  }
+}
