@@ -9,10 +9,10 @@ class BaseRepository {
   }
 
   async getAll(args) {
-    const results = await this.model.findAll(args);
+    const results = await this.model.findAndCountAll(args);
 
     if (this.toEntity) {
-      return results.map((result) => new this.ToEntity(result));
+      results.rows = results.rows.map((result) => new this.ToEntity(result));
     }
     return results;
   }

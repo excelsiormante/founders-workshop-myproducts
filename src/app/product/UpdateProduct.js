@@ -2,9 +2,11 @@ const { NewProduct } = require('src/domain/Product');
 const { ValidationError } = require('src/domain/error/errors').types;
 
 class UpdateProduct {
-  constructor({ ProductRepository, utils }) {
+  constructor({ ProductRepository, utils, config }) {
     this.ProductRepository = ProductRepository;
     this.utils = utils;
+    this.productPhotoPath = config.storage.productPhotoPath;
+    this.baseUrl = config.web.baseUrl;
   }
 
   async execute(id, data) {

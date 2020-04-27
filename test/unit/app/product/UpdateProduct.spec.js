@@ -1,6 +1,7 @@
 const { expect } = require('chai');
 const UpdateProduct = require('src/app/product/UpdateProduct');
 const utils = require('src/interfaces/http/utils');
+const config = require('config');
 
 describe('App :: Product :: UpdateProduct', () => {
   let updateProduct;
@@ -15,6 +16,7 @@ describe('App :: Product :: UpdateProduct', () => {
         updateProduct = new UpdateProduct({
           ProductRepository: MockProductsRepository,
           utils,
+          config,
         });
       });
 
@@ -47,6 +49,7 @@ describe('App :: Product :: UpdateProduct', () => {
         updateProduct = new UpdateProduct({
           ProductRepository: MockProductsRepository,
           utils,
+          config,
         });
       });
 
@@ -74,6 +77,7 @@ describe('App :: Product :: UpdateProduct', () => {
       updateProduct = new UpdateProduct({
         ProductRepository: MockProductsRepository,
         utils,
+        config,
       });
     });
 
@@ -102,6 +106,7 @@ describe('App :: Product :: UpdateProduct', () => {
       updateProduct = new UpdateProduct({
         ProductRepository: MockProductsRepository,
         utils,
+        config,
       });
     });
 

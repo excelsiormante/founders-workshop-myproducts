@@ -69,6 +69,9 @@
                           "items": {
                             "$ref": "#components/schemas/Product"
                           }
+                        },
+                        "count": {
+                          "type": "number"
                         }
                       }
                     }
@@ -153,7 +156,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "allOf": [
+                    {
+                      "$ref": "#/defaultResponses/DefaultProperties"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "$ref": "#/components/schemas/Product"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -203,7 +217,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "allOf": [
+                    {
+                      "$ref": "#/defaultResponses/DefaultProperties"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "$ref": "#/components/schemas/Product"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -283,10 +308,24 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
-                  }
+                  "allOf": [
+                    {
+                      "$ref": "#/defaultResponses/DefaultProperties"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Category"
+                          }
+                        },
+                        "count": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -315,7 +354,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "allOf": [
+                    {
+                      "$ref": "#/defaultResponses/DefaultProperties"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "$ref": "#/components/schemas/Category"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -356,7 +406,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "allOf": [
+                    {
+                      "$ref": "#/defaultResponses/DefaultProperties"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "$ref": "#/components/schemas/Category"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -406,7 +467,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "allOf": [
+                    {
+                      "$ref": "#/defaultResponses/DefaultProperties"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "$ref": "#/components/schemas/Category"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -497,10 +569,24 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Offer"
-                  }
+                  "allOf": [
+                    {
+                      "$ref": "#/defaultResponses/DefaultProperties"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Offer"
+                          }
+                        },
+                        "count": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -529,7 +615,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Offer"
+                  "allOf": [
+                    {
+                      "$ref": "#/defaultResponses/DefaultProperties"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "$ref": "#/components/schemas/Offer"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -570,7 +667,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Offer"
+                  "allOf": [
+                    {
+                      "$ref": "#/defaultResponses/DefaultProperties"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "$ref": "#/components/schemas/Offer"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -620,7 +728,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Offer"
+                  "allOf": [
+                    {
+                      "$ref": "#/defaultResponses/DefaultProperties"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "$ref": "#/components/schemas/Offer"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }

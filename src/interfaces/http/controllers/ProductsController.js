@@ -62,7 +62,7 @@ class ProductsController extends BaseController {
       // parse multipart form array data manually
       if (req.body.categories) {
         const { categories } = req.body;
-        req.body.categories = categories.search(',') !== -1 ? categories.split(',') : categories;
+        req.body.categories = categories.search(',') !== -1 ? categories.split(',') : [categories];
       }
       const result = await operation.execute(req.params.uuid, req.body);
       res.status(Status.ACCEPTED).json({

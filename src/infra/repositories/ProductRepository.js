@@ -7,8 +7,20 @@ class ProductRepository extends BaseRepository {
   }
 
   async getAll(args) {
-    const results = await this.model.findAll({
+    const results = await this.model.findAndCountAll({
       ...args,
+      include: [{
+        model: this.CategoryModel,
+        as: 'categories',
+        through: { attributes: [] },
+      }],
+    });
+    return results;
+  }
+
+
+  async getById(id, options = {}) {
+    const result = await this._getById(id, {
       include: [{
         model: this.CategoryModel,
         as: 'categories',
@@ -17,9 +29,9 @@ class ProductRepository extends BaseRepository {
     });
 
     if (this.toEntity) {
-      return results.map((result) => new this.ToEntity(result));
+      return this.toEntity(result);
     }
-    return results;
+    return result;
   }
 
   async add(data) {

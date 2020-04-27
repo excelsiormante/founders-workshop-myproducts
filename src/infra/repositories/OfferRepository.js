@@ -7,7 +7,7 @@ class OfferRepository extends BaseRepository {
   }
 
   async getAll(args) {
-    const results = await this.model.findAll({
+    const results = await this.model.findAndCountAll({
       ...args,
       where: {
         itemUUID: {
@@ -16,9 +16,6 @@ class OfferRepository extends BaseRepository {
       },
     });
 
-    if (this.toEntity) {
-      return results.map((result) => new this.ToEntity(result));
-    }
     return results;
   }
 }

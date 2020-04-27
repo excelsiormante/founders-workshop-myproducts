@@ -24,7 +24,8 @@ class BaseController {
       res.status(Status.OK).json({
         statusCode: Status.OK,
         message: 'success',
-        data: results,
+        data: results.rows,
+        count: results.count,
       });
     } catch (err) {
       next(err);
