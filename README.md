@@ -1,6 +1,6 @@
 # My Products API
 
-Founders Workshop NodeJS test submitted by **Josh Mante**
+NodeJS DDD Boilerplate
 
 # Prerequisites
 
